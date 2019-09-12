@@ -43,13 +43,16 @@
                      [follows user1 user4]
                      [follows user4 user2]
                      [follows user2 user4]]
+      (sicp/defrule! db [same ?x ?x])
       (sicp/defrule! db [common-follows ?p1 ?p2 [?x]]
         (and [follows ?p1 ?x]
-             [follows ?p2 ?x]))
+             [follows ?p2 ?x]
+             (not [same ?p1 ?p2])))
       (sicp/defrule! db [common-follows ?p1 ?p2 [?x & ?xs]]
         (and [follows ?p1 ?x]
              [follows ?p2 ?x]
-             [common-follows ?p1 ?p2 ?xs]))
+             [common-follows ?p1 ?p2 ?xs]
+             (not [same ?p1 ?p2])))
       (sicp/query* db ['common-follows p1 p2 l]))))
         
 
