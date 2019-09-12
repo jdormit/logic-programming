@@ -1,4 +1,4 @@
 {:deps
  {jdormit/sicp-logic {:git/url "https://github.com/jdormit/sicp-logic"
-                      :sha "06a7bc3c60a7a13fa4ac789d2690b0c72db94250"}
+                      :sha "0bb77771b18111ec8257e6ec859a18dcd15dcba6"}
   org.clojure/core.logic {:mvn/version "0.8.11"}}}
